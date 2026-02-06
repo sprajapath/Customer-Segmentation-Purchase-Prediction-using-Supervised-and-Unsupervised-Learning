@@ -1,3 +1,120 @@
 # Customer-Segmentation-Purchase-Prediction-using-Supervised-and-Unsupervised-Learning
 
-Customer Segmentation + Purchase PredictionProject OverviewThis capstone project demonstrates the application of both supervised and unsupervised machine learning techniques using the Breast Cancer Wisconsin dataset from Scikit-learn. The goal is to provide a dual-analysis approach: predicting specific tumor classifications and grouping similar patient samples to identify underlying patterns.ObjectivesSupervised Learning: Build a predictive classification model to determine if a tumor is Malignant or Benign.Unsupervised Learning: Apply clustering to group similar tumor samples based on their numerical characteristics.Interactive Deployment: Create a Gradio interface within Google Colab to allow users to test real-time predictions and cluster assignments.DatasetThe project utilizes the Breast Cancer Wisconsin dataset, which includes:Samples: 569 Features: 30 numerical characteristics (e.g., mean radius, texture, perimeter) Target Labels:0: Malignant 1: Benign Methodology1. Supervised Learning (Classification)Model: Logistic Regression.Pipeline: Data is processed through a StandardScaler to normalize features before being passed to the LogisticRegression classifier.Evaluation: The model is evaluated using accuracy scores, confusion matrices, and classification reports (precision, recall, and F1-score).2. Unsupervised Learning (Clustering)Algorithm: KMeans Clustering.Optimization: The optimal number of clusters ($K$) is determined by computing silhouette scores for values between 2 and 7.Visualization: Principal Component Analysis (PCA) is used to reduce the 30-dimensional feature space into 2D for visual cluster plotting.3. Application DevelopmentA Gradio interface is integrated to provide a "deployment-style" experience. Users can input tumor feature values and receive:A predicted class (Malignant/Benign) from the supervised model.A cluster group assignment from the KMeans model.Tools & Libraries UsedLanguage: Python Data Handling: NumPy, Pandas Machine Learning: Scikit-learn (Preprocessing, Logistic Regression, KMeans, PCA) Visualization: Matplotlib, Seaborn Web App: Gradio How to RunOpen the .ipynb notebook in Google Colab.Run the cells to install necessary libraries (specifically !pip install gradio).Execute the training cells to build the models.Launch the Gradio app link generated at the end of the notebook to interact with the models.
+# Customer Segmentation + Purchase Prediction (Supervised + Unsupervised ML)
+
+This capstone project demonstrates a complete machine learning workflow using both:
+
+- **Supervised Learning** (classification using Logistic Regression)
+- **Unsupervised Learning** (clustering using KMeans)
+- **Interactive Deployment Demo** using **Gradio**
+
+The project uses the **Breast Cancer Wisconsin Dataset** (from Scikit-learn) to predict tumor type and cluster similar tumor samples.
+
+---
+
+## 📌 Project Overview
+
+This project covers:
+
+### ✅ Supervised Learning
+A classification model is trained to predict whether a tumor is:
+
+- **Malignant (0)**
+- **Benign (1)**
+
+The supervised model is implemented using a pipeline:
+
+- `StandardScaler`
+- `LogisticRegression`
+
+---
+
+### ✅ Unsupervised Learning
+KMeans clustering is applied to group similar tumor samples.
+
+To select the best number of clusters, the project evaluates **silhouette scores** for different values of **K (2 to 7)** and chooses the best-performing K.
+
+Clusters are visualized using **PCA (2D projection)**.
+
+---
+
+### ✅ Gradio App (Interactive UI)
+A Gradio interface is built to allow users to:
+
+- Enter tumor feature values
+- Receive:
+  - **Prediction output** (malignant or benign)
+  - **Cluster assignment output**
+
+---
+
+## 🎯 Objectives
+
+- Build a supervised learning model for tumor classification.
+- Apply unsupervised learning to cluster tumor samples.
+- Use silhouette score to select optimal K.
+- Visualize clusters in 2D using PCA.
+- Deploy a lightweight demo using Gradio.
+
+---
+
+## 📊 Dataset
+
+This project uses:
+
+### Breast Cancer Wisconsin Dataset (Scikit-learn)
+- **569 samples**
+- **30 numerical features**
+- Target labels:
+  - `0 = Malignant`
+  - `1 = Benign`
+
+---
+
+## 🧠 Models Used
+
+### Supervised Model: Logistic Regression
+- Pipeline includes feature scaling.
+- Train-test split:
+  - **80% training**
+  - **20% testing**
+  - Stratified split used to preserve class balance.
+
+Evaluation includes:
+- Accuracy score
+- Classification report (precision, recall, F1-score)
+- Confusion matrix
+
+---
+
+### Unsupervised Model: KMeans Clustering
+- Features scaled before clustering.
+- Silhouette score used to select K.
+- PCA used to reduce dimensions from 30 → 2 for visualization.
+
+---
+
+## 🛠️ Tools & Libraries
+
+- Python
+- NumPy
+- Pandas
+- Scikit-learn
+- Matplotlib / Seaborn
+- Gradio
+
+---
+
+## 🚀 How to Run the Project
+
+### 1) Clone the repository
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+
+pip install -r requirements.txt
+
+
+pip install numpy pandas scikit-learn matplotlib seaborn gradio
+
+
